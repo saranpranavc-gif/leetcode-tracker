@@ -1,0 +1,20 @@
+// Last updated: 09/07/2026, 09:48:32
+class Solution {
+    public boolean detectCapitalUse(String word) {
+
+        int n = word.length();
+        int capitals = 0;
+
+        for (char c : word.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                capitals++;
+            }
+        }
+
+        if (capitals == n) return true;
+        if (capitals == 0) return true;
+        if (capitals == 1 && Character.isUpperCase(word.charAt(0))) return true;
+
+        return false;
+    }
+}
