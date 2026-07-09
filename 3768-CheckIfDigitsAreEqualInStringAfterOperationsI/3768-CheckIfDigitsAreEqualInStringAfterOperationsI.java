@@ -1,0 +1,24 @@
+// Last updated: 09/07/2026, 09:45:28
+class Solution {
+
+    public boolean hasSameDigits(String s) {
+
+        int n = s.length();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = s.charAt(i) - '0';
+        }
+
+        while (n > 2) {
+
+            for (int i = 0; i < n - 1; i++) {
+                arr[i] = (arr[i] + arr[i + 1]) % 10;
+            }
+
+            n--;
+        }
+
+        return arr[0] == arr[1];
+    }
+}
